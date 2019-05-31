@@ -1,5 +1,9 @@
 site_name: BikeVR Docs
 nav:
     - Home: index.md
+    - Overview: overview.md
+    - Sensor Controller: sensor-controller.md
+    - Unity Framework: unity-framework.md
+    - Getting Started: getting-started.md
     - About: about.md
 theme: readthedocs
