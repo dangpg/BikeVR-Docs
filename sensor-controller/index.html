@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Sensor Controller - BikeVR Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Sensor Controller";
+    var mkdocs_page_input_path = "sensor-controller.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> BikeVR Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../overview/">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../getting-started/">Getting Started</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Sensor Controller</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#software-components">Software Components</a></li>
+    
+
+    <li class="toctree-l2"><a href="#requirements">Requirements</a></li>
+    
+
+    <li class="toctree-l2"><a href="#how-to-run">How to Run</a></li>
+    
+
+    <li class="toctree-l2"><a href="#sensor-controller-service">Sensor Controller Service</a></li>
+    
+
+    <li class="toctree-l2"><a href="#ir-characteristic-tcrt5000">IR Characteristic (TCRT5000)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#wiimore-characterisitc">Wiimore Characterisitc</a></li>
+    
+
+    <li class="toctree-l2"><a href="#write-own-characteristic">Write Own Characteristic</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../unity-framework/">Unity Framework</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">BikeVR Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Sensor Controller</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Documentation about the internal mechanics and functionalities of the sensor controller.</p>
+<p><code>Disclaimer</code>: All development and testing has been done using a <strong>Raspberry Pi 3 Model B+</strong></p>
+<h2 id="software-components">Software Components</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub Repo</td>
+<td>Source code of sensor controller</td>
+<td><a href="https://github.com/dangpg/BikeVR-Sensor-Controller">https://github.com/dangpg/BikeVR-Sensor-Controller</a></td>
+</tr>
+<tr>
+<td>Python BLE Library</td>
+<td>GitHub repo to python library responsible for talking to the BlueZ stack</td>
+<td><a href="https://github.com/ukBaz/python-bluezero">https://github.com/ukBaz/python-bluezero</a></td>
+</tr>
+<tr>
+<td>cwiid</td>
+<td>GitHub repo to python library which allows reading Wiimote internal values over Bluetooth</td>
+<td><a href="https://github.com/abstrakraft/cwiid">https://github.com/abstrakraft/cwiid</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="requirements">Requirements</h2>
+<ol>
+<li>Run and tested only on Raspberry Pi 3 Model B+</li>
+<li>Requires Python 2.7 (<a href="https://www.python.org/download/releases/2.7/">https://www.python.org/download/releases/2.7/</a>)</li>
+<li>Clone project and run <code>pip install -r requirements.txt</code></li>
+<li>In addition, run <code>sudo apt-get install python-cwiid</code></li>
+</ol>
+<h2 id="how-to-run">How to Run</h2>
+<p>Start sensor controller by running <code>python -m bikevr_sensor_controller</code>. The Raspberry Pi will be automatically advertise as a BLE peripheral. There are certain commands which allow for more options: (just enter these into the console)</p>
+<ol>
+<li>
+<p><code>wii</code> - Starts scanning for a nearby Wiimote. Press 1+2 on the Wiimote to connect. When successfully connected, the respective characteristics will be updated.</p>
+</li>
+<li>
+<p><code>exit</code> or <code>quit</code> - Quits the application</p>
+</li>
+</ol>
+<h2 id="sensor-controller-service">Sensor Controller Service</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>UUID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sensor-Controller Service</td>
+<td><code>00000000-0000-4b23-9358-f235b978d07c</code></td>
+</tr>
+</tbody>
+</table>
+<p>Randomly generated UUID. Can be edited within <code>app.py</code>. We decided to put every characteristic into one single service (makes it easier later on when connecting to the sensor-controller).</p>
+<h2 id="ir-characteristic-tcrt5000">IR Characteristic (TCRT5000)</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>UUID</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IR Sensor</td>
+<td><code>11111111-1111-4b23-9358-f235b978d07c</code></td>
+<td>boolean</td>
+<td>Represents state of TCRT5000 sensor. 1 indicates that infrared is getting reflected back to the phototransistor, i.e. something is in front of the sensor and blocking its way.</td>
+</tr>
+</tbody>
+</table>
+<p>In order to connect the sensor to the Raspberry Pi, simply use three jumper wires to connect the respective pins:</p>
+<table>
+<thead>
+<tr>
+<th>TCRT5000 Pins</th>
+<th>Raspberry Pi Pins</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VCC</td>
+<td>Pin #2 (DC Pover 5V)</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>Pin #6 (Ground)</td>
+</tr>
+<tr>
+<td>DO</td>
+<td>Pin #7 (GPIO04)</td>
+</tr>
+</tbody>
+</table>
+<p>When powering up the Raspberry Pi, the sensor should automatically turn on and indicating its opearting state by its LEDs.</p>
+<h2 id="wiimore-characterisitc">Wiimore Characterisitc</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>UUID</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wiimote Status</td>
+<td><code>22222222-2222-4b23-9358-f235b978d07c</code></td>
+<td>boolean</td>
+<td>Indicates whether Wiimote is connected or not</td>
+</tr>
+<tr>
+<td>Wiimote Buttons</td>
+<td><code>33333333-3333-4b23-9358-f235b978d07c</code></td>
+<td>unsigned int 16</td>
+<td>Represents the current state of the Wiimote buttons</td>
+</tr>
+</tbody>
+</table>
+<p>Button mapping of Wiimote using python-cwiid when holding it vertically:</p>
+<pre><code>1 - Button 2
+2 - Button 1
+4 - Button B
+8 - Button A
+16 - Minus
+32 - 
+64 -
+128 - Home
+256 - Left
+512 - Right
+1024 - Down
+2048 - Up
+4096 - Plus
+</code></pre>
+<p>When holding multiple buttons down, their respective values get summed up.</p>
+<h2 id="write-own-characteristic">Write Own Characteristic</h2>
+<p>In order to write your own characteristic / add an additional sensor, one can use the following template to advertise it as a BLE characteristic:</p>
+<pre><code>from bikevr_sensor_controller.common.user_descriptor import UserDescriptor
+from bikevr_sensor_controller.common.format_descriptor import FormatDescriptor
+from bikevr_sensor_controller.common.tools import sint16, to_int
+from bluezero import peripheral
+from threading import Thread
+from time import sleep
+
+NAME = 'Name of Characteristic'
+
+POLL_RATE = 0.1 #seconds
+
+class TemplateCharacteristic(peripheral.Characteristic):    
+    def __init__(self, uuid, service):
+        peripheral.Characteristic.__init__(self,
+                                uuid,
+                                ['read', 'notify'],
+                                service,
+                                sint16(0))  # starting value
+        self.add_descriptor(UserDescriptor(NAME, self))
+        self.add_descriptor(FormatDescriptor([0x0E, 0x00, 0x00, 0x27, 0x01, 0x00, 0x00], self))
+
+        self.add_notify_event(self.notify_event)
+
+
+    def ReadValue(self, options):
+        return self.value
+
+    def notify_event(self):
+        if self.notifying:
+            self.thread = Thread(target = self.run, args = ())
+            self.thread.setDaemon(True)
+            self.thread.start()
+        else:
+            self.thread.join()
+
+    def run(self):
+        while self.notifying:
+            # 1. Get new value
+            # 2. Check whether value has changed
+            # 3. Use self.send_notify_event to propagrate changes
+
+            sleep(POLL_RATE)
+</code></pre>
+<ol>
+<li>Give your characteristic a name (simply edit the NAME variable)</li>
+<li>If needed, adjust the poll rate (the interval a new value should be requested at)</li>
+<li>Decide what format your advertised value should use (see <a href="https://www.bluetooth.com/wp-content/uploads/Sitecore-Media-Library/Gatt/Xml/Descriptors/org.bluetooth.descriptor.gatt.characteristic_presentation_format.xml">https://www.bluetooth.com/wp-content/uploads/Sitecore-Media-Library/Gatt/Xml/Descriptors/org.bluetooth.descriptor.gatt.characteristic_presentation_format.xml</a> for more information and possible values)<ol>
+<li>Adjust the byte array parameter of FormatDescriptor based on your selection</li>
+<li>If needed, write converters for your format (see <code>tools.py</code> for an example)</li>
+</ol>
+</li>
+<li>Define a fitting starting value for your characteristic</li>
+<li>Implement your own logic for calculating/retrieving new values (see the other characteristic for more examples)</li>
+<li>Add your newly written characteristic to <code>app.py</code> so the sensor-controller includes it in its list<ol>
+<li>Define a unique characteristic UUID</li>
+<li>Use <code>service.add_characteristic</code> to add your characteristic</li>
+</ol>
+</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../unity-framework/" class="btn btn-neutral float-right" title="Unity Framework">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../getting-started/" class="btn btn-neutral" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../getting-started/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../unity-framework/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

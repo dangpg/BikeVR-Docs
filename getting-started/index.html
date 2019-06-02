@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>About - BikeVR Docs</title>
+  <title>Getting Started - BikeVR Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "About";
-    var mkdocs_page_input_path = "about.md";
+    var mkdocs_page_name = "Getting Started";
+    var mkdocs_page_input_path = "getting-started.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -58,9 +58,18 @@
     <a class="" href="../overview/">Overview</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../getting-started/">Getting Started</a>
+    <a class="current" href="./">Getting Started</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#requirements">Requirements</a></li>
+    
+
+    <li class="toctree-l2"><a href="#set-up">Set Up</a></li>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -73,15 +82,9 @@
     <a class="" href="../unity-framework/">Unity Framework</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">About</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#about">About</a></li>
-    
-
-    </ul>
+    <a class="" href="../about/">About</a>
 	    </li>
           
         </ul>
@@ -106,7 +109,7 @@
     
       
     
-    <li>About</li>
+    <li>Getting Started</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -116,8 +119,54 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="about">About</h1>
-<p>Stationary BikeVR is a group project done for the Virtual and Augmented Reality class at the University of Stuttgart during the summer semester 2019.</p>
+                <p>This page contains information about including the framework within your own Unity  projects.</p>
+<h2 id="requirements">Requirements</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compatible Smartphone</td>
+<td>Smartphone which has support for Bluetooth Low Energy</td>
+</tr>
+<tr>
+<td>BLE Unity Asset Plugin</td>
+<td>As already mentioned, this is mandatory! We will not provide you with the needed files. Therefore, please support the author and purchase his asset on the Unity Asset Store (<a href="https://assetstore.unity.com/packages/tools/network/bluetooth-le-for-ios-tvos-and-android-26661">Link</a>)</td>
+</tr>
+<tr>
+<td>Google VR SDK</td>
+<td>Follow the official documentation for setting up Unity for developing with the Google VR SDK (<a href="https://developers.google.com/vr/develop/unity/get-started-android">Link</a>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="set-up">Set Up</h2>
+<ol>
+<li>Start a new Unity project (Unity Version 2018.3.12f1)</li>
+<li>Import the BikeVR-Framework package (Assets &gt; Import Package &gt; Custom Package... &gt; Select BikeVR-Framework.unitypackage)</li>
+<li>Follow the official documentation for setting up Unity for developing with the Google VR SDK and import the Google VR SDK package</li>
+<li>Open up the Asset Store in the Unity Editor and import the BLE Unity asset from there (Click Account &gt; My Assets &gt; Import)</li>
+<li>
+<p>Your Project folder should look similar to this:</p>
+<p><img alt="" src="../images/project-folder.png" /></p>
+</li>
+<li>
+<p>Open the StartScene (Scenes/StartScene) and make sure that every value of the BLE Manager Script is set correctly:</p>
+<p><img alt="" src="../images/ble-manager.png" /></p>
+</li>
+<li>
+<p>(Optional) Feel free to edit the StartScene  or make any changes you deem necessary.</p>
+</li>
+<li>
+<p>Use the VRScene or create a new one to create your own VR application (make sure to edit the ChangeSceneButton attribute in case you create a new scene)</p>
+<p><img alt="" src="../images/change-scene-button.png" /></p>
+<p><img alt="" src="../images/vr-scene.png" /></p>
+</li>
+</ol>
+<p>Refer to the <a href="../unity-framework/">framework's documentation page</a> for more information about how to properly use it.</p>
               
             </div>
           </div>
@@ -125,8 +174,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../sensor-controller/" class="btn btn-neutral float-right" title="Sensor Controller">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="../unity-framework/" class="btn btn-neutral" title="Unity Framework"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href="../overview/" class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -152,8 +203,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../unity-framework/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../overview/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../sensor-controller/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

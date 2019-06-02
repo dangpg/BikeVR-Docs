@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>About - BikeVR Docs</title>
+  <title>Overview - BikeVR Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "About";
-    var mkdocs_page_input_path = "about.md";
+    var mkdocs_page_name = "Overview";
+    var mkdocs_page_input_path = "overview.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -53,9 +53,18 @@
     <a class="" href="..">Home</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../overview/">Overview</a>
+    <a class="current" href="./">Overview</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#software-components">Software Components</a></li>
+    
+
+    <li class="toctree-l2"><a href="#hardware-components">Hardware Components</a></li>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -73,15 +82,9 @@
     <a class="" href="../unity-framework/">Unity Framework</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">About</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#about">About</a></li>
-    
-
-    </ul>
+    <a class="" href="../about/">About</a>
 	    </li>
           
         </ul>
@@ -106,7 +109,7 @@
     
       
     
-    <li>About</li>
+    <li>Overview</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -116,8 +119,65 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="about">About</h1>
-<p>Stationary BikeVR is a group project done for the Virtual and Augmented Reality class at the University of Stuttgart during the summer semester 2019.</p>
+                <p>This page contains informaiton about the software and hardware components of our project:</p>
+<h2 id="software-components">Software Components</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sensor Controller</td>
+<td>Raspberry Pi which runs a custom python program to advertise connected sensor values by operating as a Bluetooth Low Energy peripheral</td>
+<td><a href="https://github.com/dangpg/BikeVR-Sensor-Controller">Link</a></td>
+</tr>
+<tr>
+<td>Unity Framework BikeVR</td>
+<td>C# Unity Framework which enables to read the sensor controller's values on a mobile platform (Android, IOS)</td>
+<td><a href="https://github.com/dangpg/BikeVR-Unity-Framework">Link</a></td>
+</tr>
+<tr>
+<td>Google VR Application</td>
+<td>Sample Google Cardboard Unity project which combines all components to form a sample VR gaming application</td>
+<td><a href="https://github.com/cschierle/stationaryBikeVR">Link</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="hardware-components">Hardware Components</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stationary Bike</td>
+<td>Ordinary fitness machine which will be used to act as a input controller</td>
+</tr>
+<tr>
+<td>IR Sensor - TCRT5000</td>
+<td>For the beginning we will only measure the bike’s revolution count and forward it as the proposed input value. In order to measure the current revolution count of the bike we will use an IR sensor which can be easily installed on any fitness machine.</td>
+</tr>
+<tr>
+<td>Raspberry Pi 3 Model B+</td>
+<td>By connecting the IR sensor to a Raspberry Pi, we can preprocess its signal and calculate the user’s performance. The sensor controller will then forward this data to the user’s smartphone by Bluetooth.</td>
+</tr>
+<tr>
+<td>Virtual Reality Platform</td>
+<td>We will develop our VR software by using Google Cardboard. Our main platform will be Android.</td>
+</tr>
+<tr>
+<td>Wiimote</td>
+<td>In order to further extend the user’s input possibilities, we are considering the usage of additional controllers (e.g. Wiimote which can be also paired over bluetooth).</td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>
@@ -125,8 +185,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../getting-started/" class="btn btn-neutral float-right" title="Getting Started">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="../unity-framework/" class="btn btn-neutral" title="Unity Framework"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -152,8 +214,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../unity-framework/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../getting-started/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
