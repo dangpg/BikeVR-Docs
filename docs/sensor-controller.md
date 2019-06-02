@@ -9,13 +9,13 @@ GitHub Repo | Source code of sensor controller | <https://github.com/dangpg/Bike
 Python BLE Library | GitHub repo to python library responsible for talking to the BlueZ stack | <https://github.com/ukBaz/python-bluezero>
 cwiid | GitHub repo to python library which allows reading Wiimote internal values over Bluetooth | <https://github.com/abstrakraft/cwiid>
 
-## Getting started
+## Requirements
 1. Run and tested only on Raspberry Pi 3 Model B+
 2. Requires Python 2.7 (<https://www.python.org/download/releases/2.7/>)
 3. Clone project and run `pip install -r requirements.txt`
 4. In addition, run `sudo apt-get install python-cwiid`
 
-## How to run
+## How to Run
 Start sensor controller by running `python -m bikevr_sensor_controller`. The Raspberry Pi will be automatically advertise as a BLE peripheral. There are certain commands which allow for more options: (just enter these into the console)
 
 1. `wii` - Starts scanning for a nearby Wiimote. Press 1+2 on the Wiimote to connect. When successfully connected, the respective characteristics will be updated.
@@ -34,7 +34,7 @@ Name | UUID | Format | Description
 --- | --- | --- | ---
 IR Sensor | `11111111-1111-4b23-9358-f235b978d07c` | boolean | Represents state of TCRT5000 sensor. 1 indicates that infrared is getting reflected back to the phototransistor, i.e. something is in front of the sensor and blocking its way.
 
-In order to connect the sensor to the Raspberry Pi, simply use three jumper wire to connect the respective pins:
+In order to connect the sensor to the Raspberry Pi, simply use three jumper wires to connect the respective pins:
 
 TCRT5000 Pins | Raspberry Pi Pins
 --- | ---
@@ -115,7 +115,7 @@ In order to write your own characteristic / add an additional sensor, one can us
                 
                 sleep(POLL_RATE)
 
-### Steps to consider:
+
 1. Give your characteristic a name (simply edit the NAME variable)
 2. If needed, adjust the poll rate (the interval a new value should be requested at)
 3. Decide what format your advertised value should use (see <https://www.bluetooth.com/wp-content/uploads/Sitecore-Media-Library/Gatt/Xml/Descriptors/org.bluetooth.descriptor.gatt.characteristic_presentation_format.xml> for more information and possible values)

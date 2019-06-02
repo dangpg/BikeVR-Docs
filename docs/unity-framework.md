@@ -10,10 +10,10 @@ Component | Description | Link
 GitHub Repo | Source code of Framework | <https://github.com/dangpg/BikeVR-Unity-Framework>
 BLE Unity Asset Plugin | Plugin responsible for calling native Bluetooth methods | <https://assetstore.unity.com/packages/tools/network/bluetooth-le-for-ios-tvos-and-android-26661>
 
-## Connecting to Sensor Controller
+## Connect to Sensor Controller
 The scene `StartScene` demonstrates a simple GUI scene in order to connect the smartphone with the sensor controller and can be used as a starting scene before the VR scene gets displayed.
 
-![Screenshot](images/start-scene.png)
+![](images/start-scene.png)
 
 The `BLEManager` gameobject holds the `BLEManagerScript` and is therefore responsible for managing the Bluetooth connection to the sensor controller.
 This gameobject does not get destroyed when changing scenes.
